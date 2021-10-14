@@ -12,22 +12,22 @@
 		<link rel="stylesheet" type="text/css" href="css/base.css" />
 		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 	</head>
-	<body class="demo-2">
+	<body class="demo-3">
 		<main>
 			<div class="frame">
 				<div class="frame__title-wrap">
 					<h1 class="frame__title">Wanna Know About Us?</h1>
 					<a class="frame__article" href="https://discord.gg/T3E3VRpa3v">Discord</a>
 				</div>
-				<a class="frame__github" href="https://github.com/DivyaKalash">GitHub</a>
+				<a class="frame__github" href="https://github.com/Harsh-Raj15">GitHub</a>
 				<a class="frame__previous" href="http://crown-monkey.com/">CM Website</a>
 				<div class="frame__demos">
 					<a href="index.html" class="frame__demo">CM 1</a>
-					<a href="index2.html" class="frame__demo frame__demo--current">CM 2</a>
+					<a href="index2.html" class="frame__demo">CM 2</a>
 					<a href="index3.html" class="frame__demo">CM 3</a>
 					<a href="index4.html" class="frame__demo">CM 4</a>
 					<a href="index5.html" class="frame__demo">CM 5</a>
-					<a href="index6.html" class="frame__demo">CM 6</a>
+					<a href="index6.html" class="frame__demo frame__demo--current">CM 6</a>
 				</div>
 			</div>
 			<div class="content">
@@ -201,6 +201,7 @@
 					#define PI 3.1415926535897932384626433832795
 					
 					uniform float time;
+					uniform float scroll;
 					uniform float maxHeight;
 					uniform float speed;
 					uniform float distortCenter;
@@ -225,7 +226,7 @@
 
 						
 						vec3 noiseIn = vec3(uv, 1.0)*10.0;
-						float noise = cnoise(vec3(noiseIn.x, noiseIn.y + t, noiseIn.z));
+						float noise = cnoise(vec3(noiseIn.x, noiseIn.y + scroll, noiseIn.z));
 						noise += 1.0;
 						float h = noise;
 						float angle = (uv.x - centerOff) * PI;
@@ -262,7 +263,7 @@
 
 					void main(){
 
-						vec2 stripPos = vec2( 0.0, vDisplace );
+						vec2 stripPos = vec2( 0.0, vDisplace * (sin(time)*0.5+0.7) );
 						vec4 stripColor = texture2D( pallete, stripPos );
 						stripColor *= pow(1.0-vDisplace, 1.0);
 
@@ -275,8 +276,8 @@
 					}
 
 				</script>
-				<h2 class="content__title">Divya Kalash</h2>
-				<p class="content__subtitle">MONKEY 2</p>
+				<h2 class="content__title">HARSH RAJ</h2>
+				<p class="content__subtitle">MONKEY 6</p>
 			</div>
 			<div class="overlay"></div>
 		</main>
@@ -285,6 +286,6 @@
 		<script src="js/vendor/hammer.min.js"></script>
 		<script src="js/vendor/charming.min.js"></script>
 		<script src="js/vendor/TweenMax.min.js"></script>
-		<script src="js/demo2.js"></script>
+		<script src="js/demo3.js"></script>
 	</body>
 </html>
